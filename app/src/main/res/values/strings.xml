@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PowerSetApp</string>
+    <string name="btn_new_set">Generate new random set</string>
+    <string name="empty_set">[]</string>
+    <string name="btn_get_powerset">Get powerset</string>
+    <string name="current_set">Set: %s</string>
+    <string name="result_powerset">Result: %s</string>
 </resources>

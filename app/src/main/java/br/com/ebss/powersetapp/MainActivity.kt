@@ -20,16 +20,21 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupViews() {
         binding.btnNewSet.setOnClickListener {
-            set = mutableSetOf()
-            val setSize = Random.nextInt(0, 5)
-            for (i in 1..setSize) {
-                set.add(i)
-            }
+            createRandomSet()
             binding.textInitialSet.text = set.toString()
         }
         binding.btnGetPowerSet.setOnClickListener {
-            binding.textResultSet.text = "Set: $set"
-            binding.textResultPowerSet.text = "Result: ${set.powerSet()}"
+            binding.textResultSet.text = getString(R.string.current_set, set.toString())
+            binding.textResultPowerSet.text =
+                getString(R.string.result_powerset, set.powerSet().toString())
+        }
+    }
+
+    private fun createRandomSet() {
+        set = mutableSetOf()
+        val setSize = Random.nextInt(0, 7)
+        for (i in 1..setSize) {
+            set.add(i)
         }
     }
 }
